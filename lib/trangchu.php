@@ -36,6 +36,7 @@ function TinXemNhieuNhat(){
 }
 function TinMoiNhat_TheoLoaiTin_MotTin($idLT){
     $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
     $qr = "
     SELECT * FROM tin
     WHERE idLT = $idLT
@@ -49,6 +50,8 @@ function TinMoiNhat_TheoLoaiTin_MotTin($idLT){
 
 function TinMoiNhat_TheoLoaiTin_BonTin($idLT){
     $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
+	mysqli_query($con,"SET NAMES 'utf8'");
     $qr = "
     SELECT * FROM tin
     WHERE idLT = $idLT
@@ -59,6 +62,7 @@ function TinMoiNhat_TheoLoaiTin_BonTin($idLT){
 }
 function TenLoaiTin($idLT){
     $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
     $qr = "
     SELECT Ten FROM loaitin
     WHERE idLT = $idLT
