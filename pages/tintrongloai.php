@@ -11,7 +11,15 @@ $row_bc = mysqli_fetch_array($bc, MYSQLI_ASSOC);
 </div>
 
 <?php
-$tin = TinTheoLoaiTin($idLT);
+$sotin1trang =4;
+if(isset($_GET["trang"])){
+    $trang = $_GET["trang"];
+    settype($trang, "int");
+}else{
+    $trang =1;
+}
+$from = ($trang -1)*$sotin1trang;
+$tin = TinTheoLoaiTin_PhanTrang($idLT, $from, $sotin1trang);
 while($row_tin= mysqli_fetch_array($tin, MYSQLI_ASSOC)){
 ?>
 <div class="box-cat">
@@ -38,6 +46,25 @@ while($row_tin= mysqli_fetch_array($tin, MYSQLI_ASSOC)){
 <?php
 }
 ?>
+
+
+
+<style>
+    #phantrang{text-align:center}
+    #phantrang a{background-color:#000; color:#FF0; padding:5px;margin-right: 3px}
+    #phantrang a:hover{background-color:#09F}
+</style>
+<div id ="phantrang">
+<?php
+$t= TinTheoLoaiTin($idLT);
+$tongsotin = mysqli_num_rows($t);
+$tongsotrang =ceil($tongsotin/$sotin1trang);
+for($i=1;$i<=$tongsotrang;$i++){
+?>
+<a <?php if($i==$trang) echo "style='background-color:red'";?>href ="index.php?p=tintrongloai&idLT=<?php echo $idLT ?>&trang=
+<?php echo $i ?>"><?php echo $i ?></a>
+<?php } ?>
+</div>
 
 
 
