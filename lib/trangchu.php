@@ -73,6 +73,7 @@ function TenLoaiTin($idLT){
 }
 function QuangCao($vitri){
     $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
     $qr = "
     SELECT * FROM quangcao
     WHERE vitri = $vitri
