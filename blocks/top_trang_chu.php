@@ -28,12 +28,9 @@
  
             
                <li>
-                <div class="title_news">
-               		 
-                    
-                   <a href="<?php
-                    echo $row_bontinmoi['idTin'] ?>&TieuDe_KhongDau=<?php
-                    echo $row_bontinmoi['TieuDe_KhongDau'] ?>.html" class="txt_link"><?php echo 
+                <div class="title_news">  
+                   <a href="index.php?p=chitiettin&idTin=<?php
+                    echo $row_bontinmoi['idTin'] ?>"class="txt_link"><?php echo 
                     $row_bontinmoi['TieuDe'] ?> </a> 
                     
                 </div>
