@@ -25,6 +25,7 @@ function TinMoiNhat_BonTin(){
 }
 function TinXemNhieuNhat(){
     $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
     $qr = "
     SELECT * FROM tin
     ORDER BY SoLanXem DESC
