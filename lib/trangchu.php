@@ -84,6 +84,7 @@ function QuangCao($vitri){
 }
 function DanhSachTheLoai(){
     $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
     $qr = "
     SELECT * FROM theloai
     
@@ -94,6 +95,7 @@ function DanhSachTheLoai(){
 }
 function DanhSachLoaiTin_Theo_TheLoai($idTL){
     $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
     $qr = "
     SELECT * FROM loaitin
     where idTL= $idTL
@@ -105,6 +107,7 @@ function DanhSachLoaiTin_Theo_TheLoai($idTL){
 }
 function TinMoi_BenTrai($idTL){
     $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
     $qr = "
     SELECT * FROM tin
     where idTL= $idTL
@@ -116,6 +119,7 @@ function TinMoi_BenTrai($idTL){
 }
 function TinMoi_BenPhai($idTL){
     $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
     $qr = "
     SELECT * FROM tin
     where idTL= $idTL
@@ -127,6 +131,7 @@ function TinMoi_BenPhai($idTL){
 }
 function TinTheoLoaiTin($idLT){
     $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
     $qr = "
     SELECT * FROM tin
     where idLT= $idLT
@@ -138,6 +143,7 @@ function TinTheoLoaiTin($idLT){
 }
 function TinTheoLoaiTin_PhanTrang($idLT, $from, $sotin1trang){
     $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
     $qr = "
     SELECT * FROM tin
     where idLT= $idLT
@@ -150,6 +156,7 @@ function TinTheoLoaiTin_PhanTrang($idLT, $from, $sotin1trang){
 }
 function breadCrumb($idLT){
     $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
     $qr = "
     SELECT TenTL, Ten 
     FROM theloai, loaitin
@@ -162,6 +169,7 @@ function breadCrumb($idLT){
 }
 function ChiTietTin($idTin){
     $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
     $qr = "
     SELECT * FROM tin
     where idTin = $idTin
@@ -171,6 +179,7 @@ function ChiTietTin($idTin){
 }
 function TinCungLoaiTin($idTin, $idLT){
     $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
     $qr = "
     SELECT * FROM tin
     WHERE idTin <> $idTin
@@ -183,6 +192,7 @@ function TinCungLoaiTin($idTin, $idLT){
 }
 function CapNhatSoLanXemTin($idTin){
     $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
     $qr = "
     Update tin
     SET SoLanXem= SoLanXem +1
@@ -193,6 +203,7 @@ function CapNhatSoLanXemTin($idTin){
 }
 function TimKiem($tukhoa){
     $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
     $qr = "
     SELECT * FROM tin
     WHERE TieuDe  REGEXP '$tukhoa'

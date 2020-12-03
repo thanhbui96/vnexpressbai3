@@ -10,6 +10,7 @@ if (isset($_GET["p"])){
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <base href="http://localhost/khoapham.vn/" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Lap Trinh PHP - KhoaPhamTraining</title>
 <link rel="stylesheet" type="text/css" href="css/layout.css" />
@@ -21,7 +22,7 @@ if (isset($_GET["p"])){
     	<div id="logo"><img src="images/logo.gif" /></div>
     </div>
     
-    <div id="menu-vp">
+    <div >
     	<!--block/menu.php-->
         <?php require "blocks/menu.php"; ?>
     </div>
