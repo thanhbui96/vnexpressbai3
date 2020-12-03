@@ -1,6 +1,16 @@
 <?php
 $idLT = $_GET["idLT"];
 settype($idLT, "int");
+?>
+<?php
+$bc=breadCrumb($idLT);
+$row_bc = mysqli_fetch_array($bc, MYSQLI_ASSOC);
+?>
+<div>
+    Trang chu >> <?php echo $row_bc['TenTL'] ?> >> <?php echo $row_bc['Ten'] ?>
+</div>
+
+<?php
 $tin = TinTheoLoaiTin($idLT);
 while($row_tin= mysqli_fetch_array($tin, MYSQLI_ASSOC)){
 ?>
