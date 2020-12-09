@@ -7,6 +7,21 @@ if(!isset($_SESSION["idUser"])&& $_SESSION["idGroup"]==1){
 require "../lib/dbCon.php";
 require "../lib/quantri.php";
 ?>
+
+<?php
+if( isset($_POST["btnThem"])){
+	$TenTL = $_POST["TenTL"];
+	$TenTL_KhongDau = changeTitle($TenTL);
+	$ThuTu = $_POST["ThuTu"];
+	      settype($ThuTu,"int");
+	$AnHien = $_POST["AnHien"];
+	 //     settype($AnHien, "int");
+	//$con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	//mysqli_query($con,"SET NAMES 'utf8'");
+	//echo $qr = "INSERT INTO theloai
+	//VALUES(null,'$TenTL','$TenTL_KhongDau','$ThuTu','$AnHien')";
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
