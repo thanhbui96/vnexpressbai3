@@ -20,7 +20,8 @@ if( isset($_POST["btnThem"])){
 	mysqli_query($con,"SET NAMES 'utf8'");
 	$qr = "INSERT INTO theloai
 	VALUES(null,'$TenTL','$TenTL_KhongDau','$ThuTu','$AnHien')";
-	return mysqli_query($con,$qr);
+	mysqli_query($con,$qr);
+	header("location:listTheLoai.php");
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
