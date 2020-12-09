@@ -18,7 +18,28 @@ function ChiTietTheLoai($idTL){
     $row = mysqli_query($con,$qr);
     return mysqli_fetch_array($row, MYSQLI_ASSOC);
 }
-
+function DanhSachLoaiTin(){
+    $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
+    $qr = "
+    SELECT * FROM loaitin,theloai
+    where theloai.idTL =loaitin.idTL 
+    order by idLT DESC";
+    
+    
+    return mysqli_query($con,$qr);
+}
+function ChiTietLoaiTin($idLT){
+    $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
+    $qr = "
+    SELECT * FROM loaitin
+    where idLT ='$idLT' ";
+    $loaitin = mysqli_query($con,$qr);
+    
+    
+    return mysqli_fetch_array($loaitin, MYSQLI_ASSOC);
+}
 function stripUnicode($str){ 
 if(!$str) return false;
 
