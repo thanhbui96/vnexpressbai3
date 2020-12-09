@@ -52,7 +52,7 @@ require "../lib/quantri.php";
         <td><strong>{TenTL_KhongDau}</strong></td>
         <td><strong>{ThuTu}</strong></td>
         <td><strong>{AnHien}</strong></td>
-        <td><strong><a href="suaTheLoai.php?idTL={idTL}">Sửa</a>-<a href="xoaTheLoai.php?idTL={idTL}">Xóa</a></strong></td>
+        <td><strong><a href="suaTheLoai.php?idTL={idTL}">Sửa</a>-<a onclick ="return confirm ('Bạn có chắc là muốn xóa không? ')" href="xoaTheLoai.php?idTL={idTL}">Xóa</a></strong></td>
       </tr>
       <?php
 	  $s=ob_get_clean();

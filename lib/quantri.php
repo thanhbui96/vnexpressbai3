@@ -9,6 +9,15 @@ function DanhSachTheLoai(){
     ";
     return mysqli_query($con,$qr);
 }
+function ChiTietTheLoai($idTL){
+    $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
+    $qr = "
+    SELECT * FROM theloai
+    WHERE idTL ='$idTL' ";
+    $row = mysqli_query($con,$qr);
+    return mysqli_fetch_array($row, MYSQLI_ASSOC);
+}
 
 function stripUnicode($str){ 
 if(!$str) return false;
