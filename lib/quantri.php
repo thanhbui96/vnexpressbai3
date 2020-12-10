@@ -40,6 +40,19 @@ function ChiTietLoaiTin($idLT){
     
     return mysqli_fetch_array($loaitin, MYSQLI_ASSOC);
 }
+/// Quan tri Tin
+function DanhSachTin(){
+    $con = mysqli_connect('localhost', "root","","khoaphamtraining");
+	mysqli_query($con,"SET NAMES 'utf8'");
+    $qr = "
+    SELECT tin.*, TenTL, Ten FROM tin, theloai, loaitin
+	where tin.idTL =theloai.idTL
+	AND tin.idLT = loaitin.idLT
+    order by idTin DESC
+	LIMIT 0,20
+	";
+    return mysqli_query($con,$qr);
+}
 function stripUnicode($str){ 
 if(!$str) return false;
 
